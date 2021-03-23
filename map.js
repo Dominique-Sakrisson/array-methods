@@ -1,10 +1,14 @@
 const callback = (item) => {
-    return item;
+   return item;
 }
 const map = (( arr, callback) => {
+    let newArr = [];
     for(let i = 0; i < arr.length; i++){
-       return callback(arr[i]);
+        if(arr[i] !== null && arr[i] !== undefined){
+            newArr[i] = callback(arr[i], i);
+        }
     }
+    return newArr;
 })  
 
 // const filter = ((arr, callback) => {
